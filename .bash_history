@@ -109,3 +109,45 @@ ssh -T git@github.com
 ssh -i your-private-key.pem ec2-user@13.233.197.196
 [200~ssh -i Mykey.pem ec2-user@13.233.197.196
 ssh -i Mykey.pem ec2-user@13.233.197.196
+rm -rf ~/.ssh/id_rsa ~/.ssh/id_rsa.pub
+ssh-keygen -t rsa -b 4096 -C "tejareddy2609@gmail.com"
+cat ~/.ssh/id_rsa.pub
+eval "$(ssh-agent -s)"
+ssh-add ~/.ssh/id_rsa
+ssh -T git@github.com
+git push origin main
+git pull origin main --rebase
+git add .
+git commit -m "save changes before pull"
+git pull origin main --rebase
+git push origin main
+rm -rf .vscode-server
+nano .gitignore
+git rm -r --cached .vscode-server
+git add .
+git commit -m "remove vscode server files"
+git push origin main
+git filter-branch --force --index-filter 'git rm -r --cached --ignore-unmatch .vscode-server' --prune-empty --tag-name-filter cat -- --all
+git push origin main --force
+git rm --cached -r .ssh
+echo ".ssh/" >> .gitignore
+git add .gitignore
+git commit -m "remove ssh keys"
+git filter-branch --force --index-filter "git rm --cached --ignore-unmatch -r .ssh" --prune-empty --tag-name-filter cat -- --all
+git push origin main --force
+rm -rf ~/.ssh/id_rsa*
+ssh-keygen -t rsa -b 4096 -C "your_email"
+rm -rf ~/.ssh/id_rsa*
+ssh-keygen -t rsa -b 4096 -C "tejareddy2609@gmail.com"
+git rm --cached -r .ssh
+echo ".ssh/" >> .gitignore
+git add .gitignore
+git commit -m "remove ssh keys"
+git push origin main --force
+rm -rf ~/.ssh/id_rsa*
+ssh-keygen -t rsa -b 4096 -C "your_email"
+rm -rf ~/.ssh/id_rsa*
+ssh-keygen -t rsa -b 4096 -C "tejareddy2609@gmail.com"
+cat ~/.ssh/id_rsa.pub
+nano ~/.ssh/authorized_keys
+cat ~/.ssh/id_rsa
