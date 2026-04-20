@@ -29,3 +29,83 @@ sudo systemctl disable httpd
 sudo systemctl start nginx
 sudo systemctl enable nginx
 sudo systemctl status nginx
+git init
+sudo yum update -y
+sudo yum install git -y
+gi t--veersion
+git --version
+git init
+git add
+git add .
+git commit -m "Initial commit"
+git branch -M main
+git remote add origin
+https://github.com/Teja260906/Teja
+git remote add origin https://github.com/Teja260906/Teja
+git push -u origin main
+cd /usr/share/nginx/html
+sudo rm -rf *
+sudo git clone https://github.com/Teja260906/Teja.
+cd /usr/share/nginx/html
+sudo rm -rf *
+sudo chown -R ec2-user:ec3-user /usr/share/nginx/html
+sudo chown -R ec2-user:ec2-user /usr/share/nginx/html
+sudo systemctl restart nginx
+git clone https://github.com/Teja260906/Teja .
+sudo rm -rf *
+git clone https://github.com/Teja260906/Teja .
+rm -rf * .git
+ls -a
+git clone https://github.com/Teja260906/Teja .
+sudo systemmctl restart nginx
+sudo systemctl restart nginx
+git --version
+ssh-keygen -t rsa -b 4096 -C "tejareddy2609@gmail.com"
+ssh-keygen -t rsa -b 4096 -C "tejaredddy2609@gmail.com"
+cat ~/ .ssh/id_rsa.pub
+ssh -T giit@github.com
+ls ~/.ssh
+cat ~/.ssh/id_rsa.pub
+ssh -T git@github.com
+cd /usr/share/nginx/html
+git remote set-url origin git@github.com:Teja260906/Teja.git
+git pull origin main
+cat ~/.ssh/id_rsa
+rm -rf ~/.ssh/id_rsa ~/.ssh/id_rsa.pub
+ssh-keygen -t rsa -b 4096 -C "tejareddy2609@gmail.com"
+cat ~/.ssh/id_rsa.pub
+git commit -m "retry deploy"
+git push
+git commit -m "retry deploy"
+git push
+mkdir -p ~/.ssh
+nano ~/.ssh/authorized_keys
+chmod 700 ~/.ssh
+chmod 600 ~/.ssh/authorized_keys
+git commit -m "retry deploy"
+git push
+ssh -i ~/.ssh/id_rsa ec2-user@localhost
+git commit -m "fix ssh auth"
+git push
+cat ~/.ssh/id_rsa
+ssh-keygen -t ed25519 -C "tejareddy2609@gmail.com"
+git commit -am "fix key"
+git push
+cat ~/.ssh/id_rsa.pub
+nano ~/.ssh/authorized_keys
+cat ~/.ssh/id_rsa.pub
+nano ~/.ssh/authorized_keys
+chmod 700 ~/.ssh
+chmod 600 ~/.ssh/authorized_keys
+ssh -i ~/.ssh/id_rsa ec2-user@13.233.197.196
+git commit --allow-empty -m "final fix"
+git push origin main
+git remote set-url origin git@github.com:Teja260906/Teja.git
+git remote -v
+git push origin main
+eval "$(ssh-agent -s)"
+ssh-add ~/.ssh/id_rsa
+ssh -T git@github.com
+ssh -i your-private-key.pem ec2-user@13.233.197.196
+[200~ssh -i Mykey.pem ec2-user@13.233.197.196
+ssh -i Mykey.pem ec2-user@13.233.197.196
