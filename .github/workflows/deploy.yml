@@ -10,13 +10,23 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Deploy via SSH
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Upload files to EC2
+        uses: appleboy/scp-action@v0.1.7
+        with:
+          host: 13.233.197.196
+          username: ec2-user
+          key: ${{ secrets.EC2_KEY }}
+          source: "."
+          target: "/usr/share/nginx/html"
+
+      - name: Restart nginx
         uses: appleboy/ssh-action@v1.0.0
         with:
           host: 13.233.197.196
           username: ec2-user
           key: ${{ secrets.EC2_KEY }}
           script: |
-            cd /usr/share/nginx/html
-            git pull origin main
             sudo systemctl restart nginx
