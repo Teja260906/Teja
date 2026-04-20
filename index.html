@@ -1,19 +1,107 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <meta charset ="UTF-8">
-    <title>🚀Teja's Cloud Site</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Teja | Portfolio</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: #0f172a;
+      color: white;
+    }
+
+    header {
+      text-align: center;
+      padding: 100px 20px;
+    }
+
+    h1 {
+      font-size: 48px;
+      margin: 0;
+    }
+
+    p {
+      color: #94a3b8;
+    }
+
+    .btn {
+      margin-top: 20px;
+      padding: 12px 24px;
+      background: #6366f1;
+      border: none;
+      border-radius: 8px;
+      color: white;
+      cursor: pointer;
+    }
+
+    section {
+      padding: 60px 20px;
+      max-width: 1000px;
+      margin: auto;
+    }
+
+    .projects {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+    }
+
+    .card {
+      background: #1e293b;
+      padding: 20px;
+      border-radius: 12px;
+      transition: 0.3s;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+    }
+
+    footer {
+      text-align: center;
+      padding: 30px;
+      color: #64748b;
+    }
+  </style>
 </head>
 <body>
 
-    <div class="container">
-        <h1>Owo Mii Cloud Server 😍 </h1>
-        <p>Hosted on AWS EC2</p>
+<header>
+  <h1>Hi, I'm Teja 👋</h1>
+  <p>Aspiring Software Engineer | AWS | DevOps</p>
+  <button class="btn">View Projects</button>
+</header>
 
-        <button onclick="showMessage()">Click Me</button>
+<section>
+  <h2>Projects</h2>
+  <div class="projects">
+    <div class="card">
+      <h3>Cloud Portfolio</h3>
+      <p>Hosted on AWS EC2 with CI/CD using GitHub Actions</p>
     </div>
 
-    <script src="script.js"></script>
+    <div class="card">
+      <h3>AI Project</h3>
+      <p>Game theory based depression detection system</p>
+    </div>
+  </div>
+</section>
+
+<section>
+  <h2>Skills</h2>
+  <p>HTML, CSS, JavaScript, AWS EC2, GitHub Actions, Linux</p>
+</section>
+
+<section>
+  <h2>Contact</h2>
+  <p>Email: your@email.com</p>
+</section>
+
+<footer>
+  © 2026 Teja
+</footer>
+
 </body>
 </html>
