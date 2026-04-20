@@ -1,40 +1,117 @@
-function showMessage() {
-    
-    alert("🔥 Welcome Teja! Your cloud site is live!");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial;
 }
-<script>
-const elements = document.querySelectorAll('.fade-in');
 
-const observer = new IntersectionObserver(entries => {
-  entries.forEach(entry => {
-    if (entry.isIntersecting) {
-      entry.target.classList.add('show');
-    }
-  });
-});
+body {
+  background: linear-gradient(135deg, #0f172a, #1e293b);
+  color: white;
+}
 
-elements.forEach(el => observer.observe(el));
-</script>
-// Load projects from backend
-fetch("http://13.233.197.196:3000/projects")
-  .then(res => res.json())
-  .then(data => {
-    console.log(data);
-  });
+/* NAV */
+nav {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px;
+  background: rgba(0,0,0,0.4);
+}
 
-// Contact form
-function sendMessage() {
-  fetch("http://13.233.197.196:3000/contact", {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json"
-    },
-    body: JSON.stringify({
-      name: "Teja",
-      email: "test@gmail.com",
-      message: "Hello!"
-    })
-  })
-  .then(res => res.json())
-  .then(data => alert(data.status));
+nav ul {
+  display: flex;
+  gap: 20px;
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+}
+
+/* HERO */
+.hero {
+  height: 90vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
+
+.hero button {
+  padding: 10px 20px;
+  background: #f59e0b;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+/* PROJECTS */
+#projects {
+  padding: 50px;
+  text-align: center;
+}
+
+.grid {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.card {
+  background: rgba(255,255,255,0.1);
+  padding: 20px;
+  border-radius: 10px;
+  width: 250px;
+  transition: 0.3s;
+}
+
+.card:hover {
+  transform: scale(1.05);
+}
+
+/* CONTACT */
+#contact {
+  padding: 50px;
+  text-align: center;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  width: 300px;
+  margin: auto;
+}
+
+input, textarea {
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+}
+
+button {
+  background: #22c55e;
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+}
+
+/* FOOTER */
+footer {
+  text-align: center;
+  padding: 20px;
+}
+
+/* ANIMATION */
+.fade {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: 1s;
+}
+
+.show {
+  opacity: 1;
+  transform: translateY(0);
 }
