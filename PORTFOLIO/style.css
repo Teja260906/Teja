@@ -1,48 +1,117 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial;
+}
+
 body {
-    margin: 0;
-    font-family: Arial, sans-serif;
-    background: linear-gradient(135deg, #1e3c72, #2a5298);
-    color: white;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
+  background: linear-gradient(135deg, #0f172a, #1e293b);
+  color: white;
 }
 
-.container {
-    text-align: center;
-    background: rgba(0,0,0,0.3);
-    padding: 40px;
-    border-radius: 15px;
-    box-shadow: 0 0 20px rgba(0,0,0,0.5);
+/* NAV */
+nav {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px;
+  background: rgba(0,0,0,0.4);
 }
 
-button {
-    margin-top: 20px;
-    padding: 10px 20px;
-    border: none;
-    border-radius: 8px;
-    background: #ff7b00;
-    color: white;
-    font-size: 16px;
-    cursor: pointer;
-}
-.fade-in {
-  opacity: 0;
-  transform: translateY(30px);
-  transition: all 0.8s ease;
+nav ul {
+  display: flex;
+  gap: 20px;
 }
 
-.fade-in.show {
-  opacity: 1;
-  transform: translateY(0);
+nav a {
+  color: white;
+  text-decoration: none;
 }
 
-.card:hover {
-  transform: translateY(-8px) scale(1.02);
+/* HERO */
+.hero {
+  height: 90vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
+
+.hero button {
+  padding: 10px 20px;
+  background: #f59e0b;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+/* PROJECTS */
+#projects {
+  padding: 50px;
+  text-align: center;
+}
+
+.grid {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.card {
+  background: rgba(255,255,255,0.1);
+  padding: 20px;
+  border-radius: 10px;
+  width: 250px;
   transition: 0.3s;
 }
 
-button:hover {
-    background: #ff9d33;
+.card:hover {
+  transform: scale(1.05);
+}
+
+/* CONTACT */
+#contact {
+  padding: 50px;
+  text-align: center;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  width: 300px;
+  margin: auto;
+}
+
+input, textarea {
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+}
+
+button {
+  background: #22c55e;
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+}
+
+/* FOOTER */
+footer {
+  text-align: center;
+  padding: 20px;
+}
+
+/* ANIMATION */
+.fade {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: 1s;
+}
+
+.show {
+  opacity: 1;
+  transform: translateY(0);
 }
