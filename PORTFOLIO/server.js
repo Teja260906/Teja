@@ -1,15 +1,42 @@
 const express = require("express");
-const fs = require("fs");
-const app = express();
+const cors = require("cors");
 
+const app = express();
+const PORT = 3000;
+
+app.use(cors());
 app.use(express.json());
 
-app.post("/contact", (req, res) => {
-  const data = req.body;
-
-  fs.appendFileSync("messages.txt", JSON.stringify(data) + "\n");
-
-  res.json({ message: "Message received!" });
+// 🔹 Test route
+app.get("/", (req, res) => {
+  res.send("Backend is running 🚀");
 });
 
-app.listen(3000, () => console.log("Server running on port 3000"));
+// 🔹 Projects API
+app.get("/projects", (req, res) => {
+  res.json([
+    {
+      title: "AWS Portfolio",
+      desc: "CI/CD deployment using GitHub Actions + EC2",
+      link: "http://13.233.197.196"
+    },
+    {
+      title: "AI Depression Detection",
+      desc: "Game theory ML project",
+      link: "#"
+    }
+  ]);
+});
+
+// 🔹 Contact API
+app.post("/contact", (req, res) => {
+  const { name, email, message } = req.body;
+
+  console.log("📩 New Contact:", name, email, message);
+
+  res.json({ status: "Message received ✅" });
+});
+
+app.listen(PORT, () => {
+  console.log(`Server running on http://localhost:${PORT}`);
+});
