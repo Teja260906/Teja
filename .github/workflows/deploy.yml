@@ -1,4 +1,4 @@
-name: Deploy to EC2
+name: 🚀 Deploy to EC2
 
 on:
   push:
@@ -10,23 +10,33 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout code
+      - name: 🔄 Checkout code
         uses: actions/checkout@v4
 
-      - name: Upload files to EC2
-        uses: appleboy/scp-action@v0.1.7
+      - name: 🚀 Deploy via SSH
+        uses: appleboy/ssh-action@v1.0.3
         with:
           host: 13.233.197.196
           username: ec2-user
           key: ${{ secrets.EC2_KEY }}
-          source: "."
-          target: "/usr/share/nginx/html"
 
-      - name: Restart nginx
-        uses: appleboy/ssh-action@v1.0.0
-        with:
-          host: 13.233.197.196
-          username: ec2-user
-          key: ${{ secrets.EC2_KEY }}
           script: |
+            echo "📥 Pulling latest code..."
+            cd /home/ec2-user/PORTFOLIO
+
+            git fetch origin
+            git reset --hard origin/main
+
+            echo "📦 Installing backend dependencies..."
+            if [ -f package.json ]; then
+              npm install
+            fi
+
+            echo "⚙️ Starting / Restarting backend with PM2..."
+            pm2 restart server || pm2 start server.js --name portfolio
+            pm2 save
+
+            echo "🌐 Restarting Nginx..."
             sudo systemctl restart nginx
+
+            echo "✅ Deployment Successful!"
