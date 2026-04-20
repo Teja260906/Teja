@@ -1,3 +1,3 @@
 function showMessage() {
-    alert("🔥 Welcome Teja! Your cloud site is live!");
+    alert(" Welcome Teja! Your cloud site is live!");
 }
