@@ -1,0 +1,22 @@
+name: Deploy to EC2
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Deploy via SSH
+        uses: appleboy/ssh-action@v1.0.0
+        with:
+          host: 13.233.197.196
+          username: ec2-user
+          key: ${{ secrets.EC2_KEY }}
+          script: |
+            cd /usr/share/nginx/html
+            git pull origin main
+            sudo systemctl restart nginx
