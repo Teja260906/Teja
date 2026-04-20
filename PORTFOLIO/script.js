@@ -44,3 +44,25 @@ document.getElementById("contactForm").addEventListener("submit", async (e) => {
   const result = await res.json();
   alert(result.message);
 });
+document.getElementById("contactForm").addEventListener("submit", async (e) => {
+  e.preventDefault();
+
+  const inputs = document.querySelectorAll("input, textarea");
+
+  const data = {
+    name: inputs[0].value,
+    email: inputs[1].value,
+    message: inputs[2].value
+  };
+
+  const res = await fetch("http://13.233.197.196:3000/contact", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json"
+    },
+    body: JSON.stringify(data)
+  });
+
+  const result = await res.json();
+  alert(result.message);
+});
